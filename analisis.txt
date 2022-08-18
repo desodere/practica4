@@ -1,0 +1,10 @@
+Analisis 
+
+Leyendo el enunciado me dio cuenta que rengo que usar minimo 2 clases.
+
+Clase enrutador:
+-Debe poder guardar una lista de enrutadores.
+-Actualizar lista(cambia el coste de enlace o los enlaces se eliminan o agregan)
+
+clase red:
+permite agregar y mover enrutadores

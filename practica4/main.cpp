@@ -1,5 +1,6 @@
 #include <iostream>
 #include "enrutador.h"
+#include "red.h"
 
 using namespace std;
 
@@ -8,32 +9,7 @@ void conectar(Enrutador &a, Enrutador &b, int costo);
 int main()
 {
 
-//    Enrutador e1("E1");
 
-//    e1.print();
-
-//    e1.setTabla_enrutamiento("A",12);
-
-//    e1.print();
-
-//    Enrutador e2("E2");
-//    //e2.setTabla_enrutamiento(e1.getTabla_enrutamiento());
-
-//    e2.print();
-
-//    e2.setTabla_enrutamiento("A",12);
-//    e2.setTabla_enrutamiento("C",4);
-//    e2.setTabla_enrutamiento("D",7);
-
-//    e2.print();
-
-//    e2.setTabla_enrutamiento(e1,100);
-
-//    e2.print();
-
-//    e1.setTabla_enrutamiento(e2,100);
-
-//    e1.print();
 
     Enrutador e1("A");
     Enrutador e2("B");
@@ -60,6 +36,16 @@ int main()
     e4.print();
 
 
+
+    Red r1;
+    r1.agregar(e1);
+    r1.print();
+
+    r1.agregar(e3);
+    r1.print();
+
+    r1.remover(e1);
+    r1.print();
 
     return 0;
 }
