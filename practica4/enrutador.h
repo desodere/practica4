@@ -5,6 +5,7 @@
 //#include <vector>
 #include <string>
 #include <map>
+#include <list>
 
 using namespace std;
 
@@ -29,8 +30,11 @@ public:
     void setNombre(const string &newNombre);
 
     void print(void);
-    void conectar(Enrutador enrutador, int costo);
-
+    void conectar(Enrutador &enrutador, int costo);
+    void conectar(string enrutador, int costo);
+    void desconectar(Enrutador &enrutador);
+    void desconectar(string enrutador);
+    Enrutador actualizar();
 
 
 

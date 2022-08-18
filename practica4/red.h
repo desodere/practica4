@@ -16,8 +16,11 @@ public:
 
     void agregar(Enrutador enrutador);
     void remover(Enrutador enrutador);
-    void actualizar();
+    void actualizar(Enrutador enrutadores);
+    void actualizar_todo();
+    int comparar(string it, string n,string fin, int acum1, int acum2 );
     void print();
+    void detalle_print();
 
 };
 

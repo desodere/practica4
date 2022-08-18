@@ -51,9 +51,53 @@ Enrutador::Enrutador(string nom)
     nombre = nom;
 }
 
-void Enrutador::conectar(Enrutador enrutador, int costo){
+void Enrutador::conectar(Enrutador &enrutador, int costo){
 
-    tabla_enrutamiento[enrutador.nombre] = costo;  // insert a new value
+    tabla_enrutamiento[enrutador.nombre] = costo;  // conecto enrutador origen a destino
+
+    enrutador.tabla_enrutamiento[nombre] = costo;  // conecto enrutador destino a origen
+
+}
+
+void Enrutador::conectar(string enrutador, int costo){
+
+    tabla_enrutamiento[enrutador] = costo;  // conecto enrutador origen a destino
+
+//    enrutador.tabla_enrutamiento[nombre] = costo;  // conecto enrutador destino a origen
+
+}
+
+void Enrutador::desconectar(Enrutador &enrutador){
+
+     map<string, int>::iterator it; // creo un iterador
+     try {
+         it = tabla_enrutamiento.find(enrutador.nombre);
+         tabla_enrutamiento.erase (it);                   // elimino la coneccion del enrutador origen
+
+         it = enrutador.tabla_enrutamiento.find(nombre);
+         enrutador.tabla_enrutamiento.erase (it);        // elimino la coneccion del enrutador destino
 
 
+     } catch (exception& e) {
+         cout<<e.what()<<endl;
+     }
+
+}
+
+void Enrutador::desconectar(string enrutador){
+
+     map<string, int>::iterator it; // creo un iterador
+
+    it = tabla_enrutamiento.find(enrutador);
+    tabla_enrutamiento.erase (it);                   // elimino la coneccion del enrutador origen
+
+//    it = enrutador.tabla_enrutamiento.find(nombre);
+//    enrutador.tabla_enrutamiento.erase (it);        // elimino la coneccion del enrutador destino
+
+
+}
+
+Enrutador Enrutador::actualizar(){
+
+    return *this;
 }
