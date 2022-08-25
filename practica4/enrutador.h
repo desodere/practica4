@@ -16,10 +16,15 @@ private:
     //vector<Enrutador> tabla_enrutamiento;
     map<string, int> tabla_enrutamiento { };
     string nombre;
+    bool estado;
+
+
 
 public:
 //    Enrutador();
     Enrutador(string nom);
+
+     Enrutador actualizar();
 
     const map<string, int> &getTabla_enrutamiento() const;
     const string &getNombre() const;
@@ -34,11 +39,14 @@ public:
     void conectar(string enrutador, int costo);
     void desconectar(Enrutador &enrutador);
     void desconectar(string enrutador);
-    Enrutador actualizar();
+
+    void actualizar(Enrutador enrutador);
 
 
 
 
+    bool getEstado() const;
+    void setEstado(bool newEstado);
 };
 
 #endif // ENRUTADOR_H

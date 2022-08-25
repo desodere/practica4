@@ -26,7 +26,9 @@ void Enrutador::print(void){
 
     cout << "Costos de: "<< nombre << endl;
     for (const auto& [key, value] : tabla_enrutamiento) {
+        if(value>0){
             cout << '[' << key << "] = " << value << "; ";
+        }
         }
     cout <<  endl;
 }
@@ -46,9 +48,25 @@ void Enrutador::setNombre(const string &newNombre)
 
 //}
 
+bool Enrutador::getEstado() const
+{
+    return estado;
+}
+
+void Enrutador::setEstado(bool newEstado)
+{
+    estado = newEstado;
+}
+
+Enrutador Enrutador::actualizar()
+{
+    return *this;
+}
+
 Enrutador::Enrutador(string nom)
 {
     nombre = nom;
+    estado = true;
 }
 
 void Enrutador::conectar(Enrutador &enrutador, int costo){
@@ -97,7 +115,9 @@ void Enrutador::desconectar(string enrutador){
 
 }
 
-Enrutador Enrutador::actualizar(){
 
-    return *this;
+
+void Enrutador::actualizar(Enrutador enrutador){
+    //tabla_enrutamiento = enrutador.tabla_enrutamiento;
+    setTabla_enrutamiento(enrutador.tabla_enrutamiento);
 }
