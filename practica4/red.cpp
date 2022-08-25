@@ -68,14 +68,23 @@ void Red::agregar(string enrutador_origen, string enrutador_destino, int costo){
 
     }else{
         Enrutador ee("q") ;
-        ee = buscar(enrutador_origen);
-        ee.setTabla_enrutamiento(enrutador_destino,costo);
-        enrutador_nuevo.setTabla_enrutamiento( ee.getTabla_enrutamiento());
+        //ee = buscar(enrutador_origen);
+        //ee.setTabla_enrutamiento(enrutador_destino,costo);
+        //enrutador_nuevo.setTabla_enrutamiento( ee.getTabla_enrutamiento());
         remover(enrutador_nuevo);
-        enrutadores.push_back(ee) ;
+        enrutadores.push_back(enrutador_nuevo) ;
         cout << "actualizado nuevo enrutador"<<endl;
         //actualizar_todo();
         //actualizar_enrutador(enrutador);
+//        for (it = enrutadores.begin(); it != enrutadores.end(); ++it){
+//            //cout << it->getNombre() << endl;
+//            if(enrutador_destino==it->getNombre()){
+//                it->setTabla_enrutamiento(enrutador_origen,costo);
+//                break;
+//            }
+//    //        cout << "Enrutador: "<<it->getNombre()<<" ";
+//    //        actualizar(it->actualizar());
+//        }
 
     }
     //actualizar_todo();
@@ -234,7 +243,9 @@ void Red::print(){
 }
 
 void Red::detalle_print(){
-
+    cout<<endl;
+    cout<<"========Lista de conecciones de los enrutadores de la red========="<<endl;
+    cout<<endl;
     vector<Enrutador>::iterator it;
         for (it = enrutadores.begin(); it != enrutadores.end(); ++it){
             //cout << it->getNombre() << endl;
@@ -275,7 +286,7 @@ void Red::recorrer(Enrutador enrutador){
     string enrutador2 ;
     int costo = 0 ;
     bool val = false;
-    cout << "||||***COSTOS DE: "<< enrutador.getNombre()  << endl;
+    //cout << "||||***COSTOS DE: "<< enrutador.getNombre()  << endl;
     for (const auto& [key1, value1] : enrutador.getTabla_enrutamiento()) {
         //cout << "***Costos de: "<< enrutador.getNombre() << '[' << key1 << "] " << endl;
             //cout << '[' << key1 << "] = " << value1 << "; ";

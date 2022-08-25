@@ -24,10 +24,10 @@ void Enrutador::setTabla_enrutamiento(Enrutador enrutador, int costo)
 
 void Enrutador::print(void){
 
-    cout << "Costos de: "<< nombre << endl;
+    cout << "Costos de coneccion del enrutador: "<< nombre << endl;
     for (const auto& [key, value] : tabla_enrutamiento) {
         if(value>0){
-            cout << '[' << key << "] = " << value << "; ";
+            cout << "De [" <<nombre<< "] a " <<"[" << key << "] = " << value << endl;
         }
         }
     cout <<  endl;

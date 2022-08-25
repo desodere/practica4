@@ -21,8 +21,8 @@ void c(Red r1);
 int main()
 {
 
-
 /*
+//PRIMERA PARTE DE LA SUSTENTACION ***************************
     //creo los enrutadores
 
     Enrutador e1("A");
@@ -52,12 +52,11 @@ int main()
 //    r1.recorrer(e1);
 
     r1.detalle_print();
-    cout<<"1===================="<<endl;
+    cout<<"===================="<<endl;
 
 //    r1.recorrer(e4);
 
-    r1.detalle_print();
-    cout<<"2===================="<<endl;
+    //r1.detalle_print();
 
     cout<<"=========Agregar enrutador a la red==========="<<endl;
     Enrutador e6("Z");
@@ -72,7 +71,7 @@ int main()
 
 
     r1.detalle_print();
-    cout<<"2===================="<<endl;
+    cout<<"===================="<<endl;
 
     r1.recorrer(e1);
     r1.recorrer(e2);
@@ -82,87 +81,10 @@ int main()
     r1.recorrer(e6);
 
     r1.detalle_print();
-    cout<<"3===================="<<endl;
-
-/*
-//    r1.print();
-
-//    cout<<endl;
-//    cout<<"Actualizando e1 ===================="<<endl;
-//    r1.actualizar(e1);
-//    cout<<endl;
-//    cout<<"===================="<<endl;
-
-
-//    cout<<endl;
-//    cout<<"===================="<<endl;
-//    r1.print();
-//    r1.detalle_print();
-
-//    cout<<"Actualizando e4===================="<<endl;
-//    r1.actualizar(e4);
-//    cout<<endl;
-    cout<<"======Conecciones iniciales========"<<endl;
-    //r1.print();
-    r1.detalle_print();
-
-    cout<<"=========Actualizar red==========="<<endl;
-    r1.actualizar_todo();
-    //r1.actualizar_todo();
-    cout<<endl;
-    cout<<"========Conecciones finales========="<<endl;
-    //r1.print();
-    r1.actualizar_enrutador(e1);
-    r1.actualizar_enrutador(e4);
-    r1.detalle_print();
-
-    cout<<"=========Agregar enrutador a la red==========="<<endl;
-    Enrutador e6("Z");
-    //e1.print();
-    e5.conectar(e1,1);
-
-    e5.conectar(e4,1);
-    e1.print();
-    e4.print();
-     cout<<"========="<<endl;
-    r1.agregar(e1);
-    //r1.actualizar_todo();
-    //r1.actualizar_enrutador(e1);
-
-    cout<<"========="<<endl;
-
-    r1.agregar(e4);
-    //r1.actualizar_todo();
-    //r1.actualizar_enrutador(e4);
-
-    r1.agregar(e6);
-
-    //r1.actualizar_todo();
-    //r1.actualizar_enrutador(e5);
-//    r1.actualizar(e1);
-//    r1.actualizar(e4);
-
-    cout<<"******************************========="<<endl;
-    //r1.actualizar_todo();
-    cout<<endl;
-    cout<<"========Conecciones finales========="<<endl;
-    //r1.print();
-
-
-    r1.detalle_print();
-    r1.actualizar_enrutador(e1);
-    r1.actualizar_enrutador(e2);
-    r1.actualizar_enrutador(e3);
-    r1.actualizar_enrutador(e4);
-    r1.actualizar_enrutador(e5);
-    r1.actualizar_enrutador(e6);
-    e1.print();
-    e2.print();
-    e3.print();
-    e4.print();
-    e5.print();
-    e6.print();
+    cout<<"===================="<<endl;
 */
+/*
+//SEGUNDA PARTE DE LA SUSTENTACION ***************************
     //Declaracion de variables
     int opcion = 0, coste = 0 ;
     bool salir = false;
@@ -175,14 +97,14 @@ int main()
     Enrutador e4("C");
     Enrutador e5("E");
 
-    e5.setEstado(false);
+    //e5.setEstado(false);
     //Conecto los enrutadores
     e1.conectar(e2,4);
     e2.conectar(e3,1);
     e3.conectar(e4,2);
     e1.conectar(e4,10);
-    e1.conectar(e5,-1);
-    e5.conectar(e4,-1);
+    e1.conectar(e5,1);
+    e5.conectar(e4,1);
 
     //Creo la red
     Red r1;
@@ -274,6 +196,7 @@ int main()
         }
 
     }
+*/
     cout<<"========FIN========="<<endl;
 
     return 0;
